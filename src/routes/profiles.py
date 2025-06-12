@@ -1,4 +1,3 @@
-from fastapi import APIRouter
 from typing import cast
 
 from fastapi import APIRouter, Depends, HTTPException, status
@@ -18,7 +17,6 @@ from storages import S3StorageInterface
 
 router = APIRouter()
 
-# Write your code here
 
 @router.post(
     "/users/{user_id}/profile/",
