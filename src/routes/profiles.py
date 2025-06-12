@@ -34,11 +34,13 @@ async def create_profile(
 ) -> ProfileResponseSchema:
     """
     Creates a user profile.
+
     Steps:
     - Validate user authentication token.
     - Check if the user already has a profile.
     - Upload avatar to S3 storage.
     - Store profile details in the database.
+
     Args:
         user_id (int): The ID of the user for whom the profile is being created.
         token (str): The authentication token.
@@ -46,8 +48,10 @@ async def create_profile(
         db (AsyncSession): The asynchronous database session.
         s3_client (S3StorageInterface): The asynchronous S3 storage client.
         profile_data (ProfileCreateSchema): The profile data from the form.
+
     Returns:
         ProfileResponseSchema: The created user profile details.
+
     Raises:
         HTTPException: If authentication fails, if the user is not found or inactive,
                        or if the profile already exists, or if S3 upload fails.
